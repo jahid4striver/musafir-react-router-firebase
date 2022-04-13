@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Footer = () => {
+    const date= new Date();
+    const year= date.getFullYear();
     return (
-        <div>
-            <h2>This is Footer</h2>
+        <div style={{backgroundColor:'tomato', color:'white', height:'150px',  display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <h5> &copy; Copyright Musafir {year}</h5>
         </div>
     );
 };
