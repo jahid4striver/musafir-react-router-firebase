@@ -12,7 +12,7 @@ const Rooms = () => {
     return (
         <div className='container'>
             <h2 style={{color:'tomato', display:'inline', borderBottom: '5px solid tomato'}} className='my-5'>Our Hotel Rooms</h2>
-            <div className='container row'>
+            <div className='row'>
             {
                 rooms.map(room=> <Room
                 key={room.id}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Room = ({ room }) => {
     const {name, price, description, img}= room;
@@ -13,7 +14,7 @@ const Room = ({ room }) => {
                 {description}
                 </Card.Text>
                 <p>Price: ${price} Per Day</p>
-                <Button style={{backgroundColor:'tomato', border:'2px solid tomato'}} className='btn btn-lg'>Book Now</Button>
+                <Link style={{backgroundColor:'tomato', color: 'white', border:'2px solid tomato'}} className='btn btn-lg' to='/booking'>Book Now</Link>
             </Card.Body>
         </Card>
         </div>
