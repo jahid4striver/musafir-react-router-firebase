@@ -66,7 +66,7 @@ const handleSignIn=e=>{
                 </Form.Group>
                 <p>{errorMsg}</p>
                 <input style={{backgroundColor:'tomato', border:'2px solid tomato', padding:'10px 50px', color: 'white'}} className='btn btn-lg mb-5' type="submit" value="Register" />
-                <p>Have a Acoount? <Link to='/login'>Please Login</Link></p>
+                <p>Have a Acoount? <Link style={{textDecoration:'none', color:'tomato'}} to='/login'>Please Login</Link></p>
             </Form>
             </div>
         </div>

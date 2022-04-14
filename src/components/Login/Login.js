@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import google from '../../images/google.png'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -13,6 +14,8 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     const [signInWithEmailAndPassword,user,loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle]= useSignInWithGoogle(auth);
+
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -20,6 +23,8 @@ const Login = () => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
+
+
 
 if (user){
     // navigate('/')
@@ -33,8 +38,13 @@ const handleLogin=e=>{
 
 }
 
+const handleGoogleSignIn= ()=>{
+    signInWithGoogle()
+    
+}
+
     return (
-        <div className='my-5 '>
+        <div className='my-5'>
             <h2>Please Login</h2>
             <div className='w-50 mx-auto border border-danger p-5'>
                 <Form onSubmit={handleLogin}>
@@ -49,8 +59,10 @@ const handleLogin=e=>{
                     <Button style={{ backgroundColor: 'tomato', border: '2px solid tomato', padding: '10px 50px' }} className='btn btn-lg mb-5' type="submit">
                         Login
                     </Button>
-                    <p>Dont't Have a Acoount? <Link to='/signup'>Register Now</Link></p>
+                    <p>Dont't Have a Acoount? <Link style={{textDecoration:'none', color:'tomato'}} to='/signup'>Register Now</Link></p>
                 </Form>
+            <div style={{color: 'tomato,', fontWeight:'bolder'}}>______Or______</div>
+            <Link onClick={handleGoogleSignIn} className='' to=''><img className='w-50 my-3' src={google} alt="" /></Link>
             </div>
         </div>
     );

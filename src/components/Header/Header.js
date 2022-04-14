@@ -12,7 +12,7 @@ const handleSignOut= ()=>{
     signOut(auth);
 }
     return (
-        <Navbar className='text-white' style={{backgroundColor: 'tomato', height: '80px'}}variant="dark">
+        <Navbar className='text-white mb-4' sticky='top' style={{backgroundColor: 'tomato', height: '80px'}}variant="dark">
             <Container>
                 <Navbar.Brand href="#home" className=''><h2>Musafir</h2></Navbar.Brand>
                 <Nav className="me-5">
