@@ -9,6 +9,7 @@ import Booking from './components/Booking/Booking';
 import About from './components/About/About';
 import SignUp from './components/SignUp/SignUp';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import RoomDetails from './components/RoomDetails/RoomDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/booking' element={<RequireAuth>
           <Booking/>
         </RequireAuth>}></Route>
+        <Route path='roomdetails/:roomId' element={<RoomDetails/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
