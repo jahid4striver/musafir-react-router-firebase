@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
 import auth from '../../firebase.init';
 
 const Header = () => {
@@ -16,12 +16,12 @@ const handleSignOut= ()=>{
             <Container>
                 <Navbar.Brand href="#home" className=''><h2>Musafir</h2></Navbar.Brand>
                 <Nav className="me-5">
-                    <Link className='text-decoration-none text-white ms-3 fw-bold' to="/">Home</Link>
-                    <Link className='text-decoration-none text-white ms-3 fw-bold' to='/booking'>Booking</Link>
-                    <Link className='text-decoration-none text-white ms-3 fw-bold' to='/about'>About</Link>
+                    <CustomLink className='text-decoration-none text-white ms-3 fw-bold' to="/">Home</CustomLink>
+                    <CustomLink className='text-decoration-none text-white ms-3 fw-bold' to='/booking'>Booking</CustomLink>
+                    <CustomLink className='text-decoration-none text-white ms-3 fw-bold' to='/about'>About</CustomLink>
                     {
-                        user? <Link onClick={handleSignOut} className='text-decoration-none text-white ms-3 fw-bold' to='/' >Sign Out</Link> 
-                        : <Link  className='text-decoration-none text-white ms-3 fw-bold' to='/login'>Login</Link>
+                        user? <CustomLink onClick={handleSignOut} className='text-decoration-none text-white ms-3 fw-bold' to='/' >Sign Out</CustomLink> 
+                        : <CustomLink  className='text-decoration-none text-white ms-3 fw-bold' to='/login'>Login</CustomLink>
                     }
                 </Nav>
             </Container>
