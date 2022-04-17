@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useData from '../../Hooks/useData';
 import Room from '../Room/Room';
 
 const Rooms = () => {
-    const [rooms, setRooms]= useState([]);
-
-    useEffect(()=>{
-        fetch('rooms.json')
-        .then(res=>res.json())
-        .then(data=>setRooms(data))
-    },[])
+    const rooms= useData('rooms.json')
     return (
         <div className='container'>
             <h2 style={{color:'tomato', display:'inline', borderBottom: '5px solid tomato'}} className='my-5'>Our Hotel Rooms</h2>
